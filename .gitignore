@@ -3,3 +3,5 @@
 src/train
 
 src/*.csv
+
+src/images_predicted
