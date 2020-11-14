@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  notebook:
+    build: notebook/
+    ports:
+      - 8888:8888
+    volumes:
+       - C:\_UT\Machine Learning\picture-labelling\src:/home/jovyan/work/data
+    environment:
+      - GRANT_SUDO=yes
+    shm_size: '8GB'
