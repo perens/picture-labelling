@@ -1,13 +1,11 @@
 # picture-labelling
 Rotating and labelling pictures
 
-```prediction.ipynb``` contains python script (in notebook format atm) that takes images from one folder, predicts the images, renames them with predicted label and certainty (e.g. img.jpg --> img_class1_98.jpg) and writes to another folder.
+```prediction.py``` contains python script that takes images from one folder, predicts the images, renames them with predicted label and certainty (e.g. img.jpg --> img_class1_98.jpg) and writes to output folder.
 
 &nbsp;
 
-Don't train on your laptop.
-
-Example model under src/resources/
+Example model under ```/src/resources/```
 
 ## Docker (If you don't want to run it on docker, proceed to 'Prediction setup')
 ### Docker Setup
