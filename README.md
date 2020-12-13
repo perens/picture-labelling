@@ -9,18 +9,29 @@ Don't train on your laptop.
 
 Example model under src/resources/
 
+## Docker
 ### Docker Setup
 In docker-compose.yml change your volumes
 
 ### Docker Run
 ```docker-compose up```
 
-### Prediction Setup
+## Prediction Setup
+
+### Setup (run if not using this repos docker)
+```pip install -r requirements.txt```
+
+### Configuration
+Configuration file is in '/config/conf.ini’.
+
 In ```conf.ini``` set:
-- input_folder - location of images to predict
-- output_folder - root folder for predicted (will be created if doesn't exist)
-- model_folder - folder where model is/are
-- model_name - name of the trained model
+- input_folder - folder with images to be predicted
+- output_folder - folder where output images are placed (will be created if doesn't exist)
+- model_folder - folder where the model resides
+- model_name - name of the trained model (e.g. model.pkl)
 
 ### Predicting
-If ```conf.ini``` is set, open ```prediction.ipynb``` and ```Run All```
+#### Jupyter notebook
+Open ```prediction.ipynb``` and ```Run All```
+#### Python script
+```python pic_label_rotate.py```
