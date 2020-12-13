@@ -1,6 +1,7 @@
 import configparser
 import torchvision.transforms as tfms
 from fastai.vision import *
+from tqdm import tqdm
 
 config = configparser.ConfigParser()
 config.read('config/conf.ini')
@@ -20,12 +21,10 @@ def fast2pil(img):
     return tfms.ToPILImage()(img.data).convert("RGB")
 
 
-
-# TODO properties existance, validation..
 input_folder = config['CONF']['input_folder']
 output_folder = config['CONF']['output_folder']
 
-for i in os.listdir(input_folder):
+for i in tqdm(os.listdir(input_folder)):
     if i.endswith(".jpg"): # TODO png?
         img_fastai = open_image(os.path.join(input_folder, i))
         img_title, img_extension = os.path.splitext(i)
@@ -50,7 +49,6 @@ for i in os.listdir(input_folder):
         
         path_to_class = output_folder + "/" + get_main_classification(str(pred_class))
         
-        # TODO find all categories from model prehand..
         if not os.path.exists(path_to_class):
             os.makedirs(path_to_class)
         
