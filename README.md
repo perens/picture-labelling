@@ -34,4 +34,4 @@ In ```conf.ini``` set:
 #### Jupyter notebook
 Open ```prediction.ipynb``` and ```Run All```
 #### Python script
-```python pic_label_rotate.py```
+```python prediction.py```
