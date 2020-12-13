@@ -9,7 +9,7 @@ Don't train on your laptop.
 
 Example model under src/resources/
 
-## Docker
+## Docker (If you don't want to run it on docker, proceed to 'Prediction setup')
 ### Docker Setup
 In docker-compose.yml change your volumes
 
