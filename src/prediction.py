@@ -46,6 +46,10 @@ for i in tqdm(os.listdir(input_folder)):
     img_pil = img_pil.rotate(360 - rotate_degree, expand=True)
     img_fastai = pil2fast(img_pil)
     
+    # final prediction to get class and rotation for output
+    pred_class, pred_idx, outputs = model.predict(img_fastai)
+    prediction = (str(pred_class), round(max(outputs.numpy()) * 100))
+    
     path_to_class = output_folder + "/" + get_main_classification(str(pred_class))
     
     if not os.path.exists(path_to_class):
